@@ -134,6 +134,8 @@ services:
     ports:
       - 3000:3000
       - 3001:3001
+    devices:
+      - /dev/dri:/dev/dri #optional
     shm_size: "1gb"
     restart: unless-stopped
 ```
@@ -150,6 +152,7 @@ docker run -d \
   -p 3000:3000 \
   -p 3001:3001 \
   -v /path/to/config:/config \
+  --device /dev/dri:/dev/dri `#optional` \
   --shm-size="1gb" \
   --restart unless-stopped \
   lscr.io/linuxserver/obsidian:latest
@@ -167,6 +170,7 @@ Containers are configured using parameters passed at runtime (such as those abov
 | `-e PGID=1000` | for GroupID - see below for explanation |
 | `-e TZ=Etc/UTC` | specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List). |
 | `-v /config` | Users home directory in the container, stores program settings and files. |
+| `--device /dev/dri` | Add this for GL support (Linux hosts only) |
 | `--shm-size=` | This is needed for electron applications to function properly. |
 | `--security-opt seccomp=unconfined` | For Docker Engine only, many modern gui apps need this to function on older hosts as syscalls are unknown to Docker. |
 
