@@ -1,0 +1,29 @@
+---
+
+# jenkins variables
+project_name: docker-obsidian
+external_type: github_stable
+release_type: stable
+release_tag: latest
+ls_branch: main
+build_armhf: false
+repo_vars:
+  - EXT_USER = 'obsidianmd'
+  - EXT_REPO = 'obsidian-releases'
+  - BUILD_VERSION_ARG = 'OBSIDIAN_VERSION'
+  - LS_USER = 'linuxserver'
+  - LS_REPO = 'docker-obsidian'
+  - CONTAINER_NAME = 'obsidian'
+  - DOCKERHUB_IMAGE = 'linuxserver/obsidian'
+  - DEV_DOCKERHUB_IMAGE = 'lsiodev/obsidian'
+  - PR_DOCKERHUB_IMAGE = 'lspipepr/obsidian'
+  - DIST_IMAGE = 'ubuntu'
+  - MULTIARCH = 'true'
+  - CI = 'true'
+  - CI_WEB = 'true'
+  - CI_PORT = '3000'
+  - CI_SSL = 'false'
+  - CI_DELAY = '120'
+  - CI_DOCKERENV = 'TZ=US/Pacific'
+  - CI_AUTH = 'user:password'
+  - CI_WEBPATH = ''
