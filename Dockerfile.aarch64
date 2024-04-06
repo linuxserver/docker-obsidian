@@ -23,6 +23,7 @@ RUN \
     OBSIDIAN_VERSION=$(curl -sX GET "https://api.github.com/repos/obsidianmd/obsidian-releases/releases/latest"| awk '/tag_name/{print $4;exit}' FS='[""]'); \
   fi && \
   apt-get install -y --no-install-recommends \
+    git \
     libgtk-3-bin \
     libatk1.0 \
     libatk-bridge2.0 \
