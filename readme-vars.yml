@@ -34,9 +34,6 @@ custom_params:
 opt_security_opt_param: true
 opt_security_opt_param_vars:
   - { run_var: "seccomp=unconfined", compose_var: "seccomp:unconfined", desc: "For Docker Engine only, many modern gui apps need this to function on older hosts as syscalls are unknown to Docker." }
-opt_param_device_map: true
-opt_param_devices:
-  - { device_path: "/dev/dri", device_host_path: "/dev/dri", desc: "Add this for GL support (Linux hosts only)" }
 
 # application setup block
 app_setup_block_enabled: true
@@ -96,4 +93,5 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "12.04.24:", desc: "Removed the optional GL support due to container log spam." }
   - { date: "06.04.24:", desc: "Initial release." }
