@@ -38,6 +38,9 @@ RUN \
   chmod +x /tmp/obsidian.app && \
   ./obsidian.app --appimage-extract && \
   mv squashfs-root /opt/obsidian && \
+  cp \
+    /opt/obsidian/usr/share/icons/hicolor/512x512/apps/obsidian.png \
+    /usr/share/icons/hicolor/512x512/apps/obsidian.png && \
   echo "**** cleanup ****" && \
   apt-get autoclean && \
   rm -rf \
