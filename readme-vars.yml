@@ -96,4 +96,5 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "18.06.24:", desc: "Fix application init for Kasm." }
   - { date: "06.04.24:", desc: "Initial release." }
