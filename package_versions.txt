@@ -288,8 +288,7 @@ github.com/davecgh/go-spew                                                    v1
 github.com/deckarep/golang-set/v2                                             v2.3.0                                              go-module                    
 github.com/dimchansky/utfbom                                                  v1.1.1                                              go-module                    
 github.com/distribution/reference                                             v0.6.0                                              go-module  (+4 duplicates)   
-github.com/docker/buildx                                                      (devel)                                             go-module                    
-github.com/docker/buildx                                                      v0.17.1                                             go-module                    
+github.com/docker/buildx                                                      v0.17.1                                             go-module  (+1 duplicate)    
 github.com/docker/cli                                                         v27.2.2-0.20240913085431-48a2cdff970d+incompatible  go-module                    
 github.com/docker/cli                                                         v27.3.0-rc.2+incompatible                           go-module                    
 github.com/docker/cli-docs-tool                                               v0.8.0                                              go-module  (+1 duplicate)    
