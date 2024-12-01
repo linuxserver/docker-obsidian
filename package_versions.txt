@@ -1139,7 +1139,7 @@ libzmq5                                                                       4.
 libzstd1                                                                      1.5.4+dfsg2-5                                       deb                         
 libzvbi-common                                                                0.2.41-1                                            deb                         
 libzvbi0                                                                      0.2.41-1                                            deb                         
-linux-libc-dev                                                                6.1.115-1                                           deb                         
+linux-libc-dev                                                                6.1.119-1                                           deb                         
 locales                                                                       2.36-9+deb12u9                                      deb                         
 locales-all                                                                   2.36-9+deb12u9                                      deb                         
 login                                                                         1:4.13+dfsg1-1+b1                                   deb                         
