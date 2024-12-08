@@ -7,44 +7,39 @@ project_logo: "https://raw.githubusercontent.com/linuxserver/docker-templates/ma
 project_blurb: "[Obsidian]({{ project_url }}) is a note-taking app that lets you create, link, and organize your notes on your device, with hundreds of plugins and themes to customize your workflow. You can also publish your notes online, access them offline, and sync them securely with end-to-end encryption."
 project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
 project_blurb_optional_extras_enabled: false
-
 # supported architectures
 available_architectures:
-  - { arch: "{{ arch_x86_64 }}", tag: "latest"}
-  - { arch: "{{ arch_arm64 }}", tag: "arm64v8-latest"}
-
+  - {arch: "{{ arch_x86_64 }}", tag: "latest"}
+  - {arch: "{{ arch_arm64 }}", tag: "arm64v8-latest"}
 # development version
 development_versions: false
-
 # container parameters
 common_param_env_vars_enabled: true
 param_container_name: "{{ project_name }}"
 param_usage_include_env: true
 param_env_vars:
-  - { env_var: "TZ", env_value: "Europe/London", desc: "Specify a timezone to use EG Europe/London." }
+  - {env_var: "TZ", env_value: "Europe/London", desc: "Specify a timezone to use EG Europe/London."}
 param_usage_include_vols: true
 param_volumes:
-  - { vol_path: "/config", vol_host_path: "/path/to/config", desc: "Users home directory in the container, stores program settings and files." }
+  - {vol_path: "/config", vol_host_path: "/path/to/config", desc: "Users home directory in the container, stores program settings and files."}
 param_usage_include_ports: true
 param_ports:
-  - { external_port: "3000", internal_port: "3000", port_desc: "Obsidian desktop gui." }
-  - { external_port: "3001", internal_port: "3001", port_desc: "Obsidian desktop gui HTTPS." }
+  - {external_port: "3000", internal_port: "3000", port_desc: "Obsidian desktop gui."}
+  - {external_port: "3001", internal_port: "3001", port_desc: "Obsidian desktop gui HTTPS."}
 custom_params:
-  - { name: "shm-size", name_compose: "shm_size", value: "1gb",desc: "This is needed for electron applications to function properly." }
+  - {name: "shm-size", name_compose: "shm_size", value: "1gb", desc: "This is needed for electron applications to function properly."}
 opt_security_opt_param: true
 opt_security_opt_param_vars:
-  - { run_var: "seccomp=unconfined", compose_var: "seccomp:unconfined", desc: "For Docker Engine only, many modern gui apps need this to function on older hosts as syscalls are unknown to Docker." }
+  - {run_var: "seccomp=unconfined", compose_var: "seccomp:unconfined", desc: "For Docker Engine only, many modern gui apps need this to function on older hosts as syscalls are unknown to Docker."}
 opt_param_device_map: true
 opt_param_devices:
-  - { device_path: "/dev/dri", device_host_path: "/dev/dri", desc: "Add this for GL support (Linux hosts only)" }
-
+  - {device_path: "/dev/dri", device_host_path: "/dev/dri", desc: "Add this for GL support (Linux hosts only)"}
 # Kasm blurb settings
 kasm_blurb: true
 show_nvidia: true
 external_http_port: "3000"
 external_https_port: "3001"
 noto_fonts: "fonts-noto-cjk"
-
 # application setup block
 app_setup_block_enabled: true
 app_setup_block: |
@@ -52,8 +47,67 @@ app_setup_block: |
 
   * http://yourhost:3000/
   * https://yourhost:3001/
-
+# init diagram
+init_diagram: |
+  "obsidian:latest": {
+    docker-mods
+    base {
+      fix-attr +\nlegacy cont-init
+    }
+    docker-mods -> base
+    legacy-services
+    custom services
+    init-services -> legacy-services
+    init-services -> custom services
+    custom services -> legacy-services
+    legacy-services -> ci-service-check
+    init-migrations -> init-adduser
+    init-kasmvnc-end -> init-config
+    init-os-end -> init-config
+    init-config -> init-config-end
+    init-crontab-config -> init-config-end
+    init-obsidian-config -> init-config-end
+    init-config -> init-crontab-config
+    init-mods-end -> init-custom-files
+    base -> init-envfile
+    init-os-end -> init-kasmvnc
+    init-nginx -> init-kasmvnc-config
+    init-video -> init-kasmvnc-end
+    base -> init-migrations
+    init-config-end -> init-mods
+    init-mods-package-install -> init-mods-end
+    init-mods -> init-mods-package-install
+    init-kasmvnc -> init-nginx
+    init-config -> init-obsidian-config
+    init-adduser -> init-os-end
+    init-envfile -> init-os-end
+    init-custom-files -> init-services
+    init-kasmvnc-config -> init-video
+    init-services -> svc-cron
+    svc-cron -> legacy-services
+    init-services -> svc-de
+    svc-nginx -> svc-de
+    svc-de -> legacy-services
+    init-services -> svc-docker
+    svc-de -> svc-docker
+    svc-docker -> legacy-services
+    init-services -> svc-kasmvnc
+    svc-pulseaudio -> svc-kasmvnc
+    svc-kasmvnc -> legacy-services
+    init-services -> svc-kclient
+    svc-kasmvnc -> svc-kclient
+    svc-kclient -> legacy-services
+    init-services -> svc-nginx
+    svc-kclient -> svc-nginx
+    svc-nginx -> legacy-services
+    init-services -> svc-pulseaudio
+    svc-pulseaudio -> legacy-services
+  }
+  Base Images: {
+    "baseimage-kasmvnc:debianbookworm" <- "baseimage-debian:bookworm"
+  }
+  "obsidian:latest" <- Base Images
 # changelog
 changelogs:
-  - { date: "18.06.24:", desc: "Fix application init for Kasm." }
-  - { date: "06.04.24:", desc: "Initial release." }
+  - {date: "18.06.24:", desc: "Fix application init for Kasm."}
+  - {date: "06.04.24:", desc: "Initial release."}
