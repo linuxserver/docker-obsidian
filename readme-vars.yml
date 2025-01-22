@@ -6,6 +6,7 @@ project_url: "https://obsidian.md"
 project_logo: "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/obsidian-logo.png"
 project_blurb: "[Obsidian]({{ project_url }}) is a note-taking app that lets you create, link, and organize your notes on your device, with hundreds of plugins and themes to customize your workflow. You can also publish your notes online, access them offline, and sync them securely with end-to-end encryption."
 project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
+project_categories: "Content Management"
 project_blurb_optional_extras_enabled: false
 # supported architectures
 available_architectures:
