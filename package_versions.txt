@@ -74,9 +74,9 @@ catatonit                                                                     0.
 chalk                                                                         4.1.2                                   npm                         
 chalk                                                                         5.3.0                                   npm                         
 chownr                                                                        2.0.0                                   npm                         
-chromium                                                                      132.0.6834.110-1~deb12u1                deb                         
-chromium-common                                                               132.0.6834.110-1~deb12u1                deb                         
-chromium-l10n                                                                 132.0.6834.110-1~deb12u1                deb                         
+chromium                                                                      132.0.6834.159-1~deb12u1                deb                         
+chromium-common                                                               132.0.6834.159-1~deb12u1                deb                         
+chromium-l10n                                                                 132.0.6834.159-1~deb12u1                deb                         
 ci-info                                                                       4.0.0                                   npm                         
 cidr-regex                                                                    4.1.1                                   npm                         
 clean-stack                                                                   2.2.0                                   npm                         
@@ -205,8 +205,8 @@ gir1.2-atspi-2.0                                                              2.
 gir1.2-freedesktop                                                            1.74.0-3                                deb                         
 gir1.2-glib-2.0                                                               1.74.0-3                                deb                         
 gir1.2-packagekitglib-1.0                                                     1.2.6-5                                 deb                         
-git                                                                           1:2.39.5-0+deb12u1                      deb                         
-git-man                                                                       1:2.39.5-0+deb12u1                      deb                         
+git                                                                           1:2.39.5-0+deb12u2                      deb                         
+git-man                                                                       1:2.39.5-0+deb12u2                      deb                         
 github.com/AlecAivazis/survey/v2                                              v2.3.7                                  go-module                   
 github.com/Graylog2/go-gelf                                                   v0.0.0-20191017102106-1550ee647df0      go-module                   
 github.com/Masterminds/semver/v3                                              v3.2.1                                  go-module  (+1 duplicate)   
