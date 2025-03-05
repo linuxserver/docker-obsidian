@@ -66,6 +66,7 @@ brace-expansion                                                               2.
 bsd-mailx                                                                     8.1.2-0.20220412cvs-1                   deb                         
 bsdextrautils                                                                 2.38.1-5+deb12u3                        deb                         
 bsdutils                                                                      1:2.38.1-5+deb12u3                      deb                         
+btime                                                                         1.0.0                                   npm                         
 bytes                                                                         3.1.2                                   npm                         
 ca-certificates                                                               20230311                                deb                         
 cacache                                                                       18.0.3                                  npm                         
@@ -198,6 +199,7 @@ function-bind                                                                 1.
 fuse-overlayfs                                                                1.10-1                                  deb                         
 fuse3                                                                         3.14.0-4                                deb                         
 gcc-12-base                                                                   12.2.0-14                               deb                         
+get-fonts                                                                     1.0.0                                   npm                         
 get-intrinsic                                                                 1.3.0                                   npm                         
 get-proto                                                                     1.0.1                                   npm                         
 ghostscript                                                                   10.0.0~dfsg-11+deb12u6                  deb                         
