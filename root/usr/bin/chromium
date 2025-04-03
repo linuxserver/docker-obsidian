@@ -10,7 +10,6 @@ fi
 # Run normally on privved containers or modified un non priv
 if grep -q 'Seccomp:.0' /proc/1/status; then
   ${BIN} \
-  --ignore-gpu-blocklist \
   --no-first-run \
   --password-store=basic \
   --simulate-outdated-no-au='Tue, 31 Dec 2099 23:59:59 GMT' \
@@ -18,7 +17,6 @@ if grep -q 'Seccomp:.0' /proc/1/status; then
    "$@" > /dev/null 2>&1
 else
   ${BIN} \
-  --ignore-gpu-blocklist \
   --no-first-run \
   --no-sandbox \
   --password-store=basic \
