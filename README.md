@@ -417,5 +417,6 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **03.04.25:** - Update chromium launch options to improve performance.
 * **18.06.24:** - Fix application init for Kasm.
 * **06.04.24:** - Initial release.
