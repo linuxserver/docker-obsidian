@@ -25,7 +25,7 @@ param_volumes:
   - {vol_path: "/config", vol_host_path: "/path/to/config", desc: "Users home directory in the container, stores program settings and files."}
 param_usage_include_ports: true
 param_ports:
-  - {external_port: "3000", internal_port: "3000", port_desc: "Obsidian desktop gui."}
+  - {external_port: "3000", internal_port: "3000", port_desc: "Obsidian desktop gui HTTP, must be proxied."}
   - {external_port: "3001", internal_port: "3001", port_desc: "Obsidian desktop gui HTTPS."}
 custom_params:
   - {name: "shm-size", name_compose: "shm_size", value: "1gb", desc: "This is needed for electron applications to function properly."}
@@ -35,18 +35,14 @@ opt_security_opt_param_vars:
 opt_param_device_map: true
 opt_param_devices:
   - {device_path: "/dev/dri", device_host_path: "/dev/dri", desc: "Add this for GL support (Linux hosts only)"}
-# Kasm blurb settings
-kasm_blurb: true
+# Selkies blurb settings
+selkies_blurb: true
 show_nvidia: true
-external_http_port: "3000"
-external_https_port: "3001"
-noto_fonts: "fonts-noto-cjk"
 # application setup block
 app_setup_block_enabled: true
 app_setup_block: |
   The application can be accessed at:
 
-  * http://yourhost:3000/
   * https://yourhost:3001/
 # init diagram
 init_diagram: |
@@ -112,6 +108,7 @@ init_diagram: |
   "obsidian:latest" <- Base Images
 # changelog
 changelogs:
+  - {date: "12.07.25:", desc: "Rebase to Selkies, HTTPS IS NOW REQUIRED."}
   - {date: "03.04.25:", desc: "Update chromium launch options to improve performance."}
   - {date: "18.06.24:", desc: "Fix application init for Kasm."}
   - {date: "06.04.24:", desc: "Initial release."}
