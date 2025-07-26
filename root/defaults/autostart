@@ -2,4 +2,4 @@ if [ "$(whoami)" != "abc" ]; then
   sudo lsiown -R $(id -u):$(id -u) \
     /opt/obsidian
 fi
-obsidian
+obsidian --no-sandbox
