@@ -59,8 +59,8 @@ init_diagram: |
     custom services -> legacy-services
     legacy-services -> ci-service-check
     init-migrations -> init-adduser
-    init-kasmvnc-end -> init-config
     init-os-end -> init-config
+    init-selkies-end -> init-config
     init-config -> init-config-end
     init-crontab-config -> init-config-end
     init-obsidian-config -> init-config-end
@@ -68,42 +68,46 @@ init_diagram: |
     init-mods-end -> init-custom-files
     init-adduser -> init-device-perms
     base -> init-envfile
-    init-os-end -> init-kasmvnc
-    init-nginx -> init-kasmvnc-config
-    init-video -> init-kasmvnc-end
     base -> init-migrations
     init-config-end -> init-mods
     init-mods-package-install -> init-mods-end
     init-mods -> init-mods-package-install
-    init-kasmvnc -> init-nginx
+    init-selkies -> init-nginx
     init-config -> init-obsidian-config
     init-adduser -> init-os-end
     init-device-perms -> init-os-end
     init-envfile -> init-os-end
+    init-os-end -> init-selkies
+    init-nginx -> init-selkies-config
+    init-video -> init-selkies-end
     init-custom-files -> init-services
-    init-kasmvnc-config -> init-video
+    init-selkies-config -> init-video
     init-services -> svc-cron
     svc-cron -> legacy-services
+    init-services -> svc-dbus
+    svc-xorg -> svc-dbus
+    svc-dbus -> legacy-services
     init-services -> svc-de
     svc-nginx -> svc-de
+    svc-xorg -> svc-de
     svc-de -> legacy-services
     init-services -> svc-docker
-    svc-de -> svc-docker
     svc-docker -> legacy-services
-    init-services -> svc-kasmvnc
-    svc-pulseaudio -> svc-kasmvnc
-    svc-kasmvnc -> legacy-services
-    init-services -> svc-kclient
-    svc-kasmvnc -> svc-kclient
-    svc-kclient -> legacy-services
     init-services -> svc-nginx
-    svc-kclient -> svc-nginx
     svc-nginx -> legacy-services
     init-services -> svc-pulseaudio
     svc-pulseaudio -> legacy-services
+    init-services -> svc-selkies
+    svc-dbus -> svc-selkies
+    svc-nginx -> svc-selkies
+    svc-pulseaudio -> svc-selkies
+    svc-xorg -> svc-selkies
+    svc-selkies -> legacy-services
+    init-services -> svc-xorg
+    svc-xorg -> legacy-services
   }
   Base Images: {
-    "baseimage-kasmvnc:debianbookworm" <- "baseimage-debian:bookworm"
+    "baseimage-selkies:debianbookworm" <- "baseimage-debian:bookworm"
   }
   "obsidian:latest" <- Base Images
 # changelog
