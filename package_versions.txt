@@ -11,9 +11,9 @@ apt-utils                                                                     2.
 at-spi2-common                                                                2.46.0-5                                   deb                         
 attrs                                                                         25.3.0                                     python                      
 av                                                                            14.4.0                                     python                      
-base-files                                                                    12.4+deb12u11                              deb                         
+base-files                                                                    12.4+deb12u12                              deb                         
 base-passwd                                                                   3.6.1                                      deb                         
-bash                                                                          5.2.15-2+b8                                deb                         
+bash                                                                          5.2.15-2+b9                                deb                         
 binutils                                                                      2.40-2                                     deb                         
 binutils-common                                                               2.40-2                                     deb                         
 binutils-x86-64-linux-gnu                                                     2.40-2                                     deb                         
@@ -24,7 +24,7 @@ bsdextrautils                                                                 2.
 bsdutils                                                                      1:2.38.1-5+deb12u3                         deb                         
 btime                                                                         1.0.0                                      npm                         
 ca-certificates                                                               20230311+deb12u1                           deb                         
-catatonit                                                                     0.1.7-1+b1                                 deb                         
+catatonit                                                                     0.1.7-1+b2                                 deb                         
 cffi                                                                          2.0.0                                      python                      
 chromium                                                                      140.0.7339.127-1~deb12u1                   deb                         
 chromium-common                                                               140.0.7339.127-1~deb12u1                   deb                         
@@ -77,7 +77,7 @@ docker-ce-cli                                                                 5:
 docker-compose-plugin                                                         2.39.2-1~debian.12~bookworm                deb                         
 dpkg                                                                          1.21.22                                    deb                         
 dunst                                                                         1.9.0-0.1                                  deb                         
-e2fsprogs                                                                     1.47.0-2                                   deb                         
+e2fsprogs                                                                     1.47.0-2+b2                                deb                         
 evdev                                                                         1.9.2                                      python                      
 exim4-base                                                                    4.96-15+deb12u7                            deb                         
 exim4-config                                                                  4.96-15+deb12u7                            deb                         
@@ -537,12 +537,12 @@ hostname                                                                      3.
 httplib2                                                                      0.20.4                                     python                      
 idna                                                                          3.10                                       python                      
 ifaddr                                                                        0.2.0                                      python                      
-init-system-helpers                                                           1.65.2                                     deb                         
+init-system-helpers                                                           1.65.2+deb12u1                             deb                         
 intel-media-va-driver                                                         23.1.1+dfsg1-1                             deb                         
 iproute2                                                                      6.1.0-3                                    deb                         
 iptables                                                                      1.8.9-2                                    deb                         
 iso-codes                                                                     4.15.0-1                                   deb                         
-jq                                                                            1.6-2.1                                    deb                         
+jq                                                                            1.6-2.1+deb12u1                            deb                         
 jq                                                                            1.7.1                                      binary                      
 k8s.io/api                                                                    v0.26.2                                    go-module                   
 k8s.io/api                                                                    v0.32.3                                    go-module  (+1 duplicate)   
@@ -560,7 +560,7 @@ k8s.io/utils                                                                  v0
 k8s.io/utils                                                                  v0.0.0-20241104100929-3ea5e8cea738         go-module  (+1 duplicate)   
 kbd                                                                           2.5.1-1+b1                                 deb                         
 keyboard-configuration                                                        1.221                                      deb                         
-krb5-locales                                                                  1.20.1-2+deb12u3                           deb                         
+krb5-locales                                                                  1.20.1-2+deb12u4                           deb                         
 lazr-restfulclient                                                            0.14.5                                     python                      
 lazr-uri                                                                      1.0.6                                      python                      
 libacl1                                                                       2.3.1-3                                    deb                         
@@ -613,13 +613,13 @@ libcbor0.8                                                                    0.
 libcc1-0                                                                      12.2.0-14+deb12u1                          deb                         
 libcodec2-1.0                                                                 1.0.5-1                                    deb                         
 libcolord2                                                                    1.4.6-2.2                                  deb                         
-libcom-err2                                                                   1.47.0-2                                   deb                         
+libcom-err2                                                                   1.47.0-2+b2                                deb                         
 libcrypt-dev                                                                  1:4.4.33-2                                 deb                         
 libcrypt1                                                                     1:4.4.33-2                                 deb                         
 libcryptsetup12                                                               2:2.6.1-4~deb12u2                          deb                         
 libctf-nobfd0                                                                 2.40-2                                     deb                         
 libctf0                                                                       2.40-2                                     deb                         
-libcups2                                                                      2.4.2-3+deb12u8                            deb                         
+libcups2                                                                      2.4.2-3+deb12u9                            deb                         
 libcurl3-gnutls                                                               7.88.1-10+deb12u14                         deb                         
 libcurl4                                                                      7.88.1-10+deb12u14                         deb                         
 libdatrie1                                                                    0.2.13-2+b1                                deb                         
@@ -650,7 +650,7 @@ liberror-perl                                                                 0.
 libev4                                                                        1:4.33-1                                   deb                         
 libevent-2.1-7                                                                2.1.12-stable-8                            deb                         
 libexpat1                                                                     2.5.0-1+deb12u2                            deb                         
-libext2fs2                                                                    1.47.0-2                                   deb                         
+libext2fs2                                                                    1.47.0-2+b2                                deb                         
 libfdisk1                                                                     2.38.1-5+deb12u3                           deb                         
 libffi-dev                                                                    3.4.4-1                                    deb                         
 libffi8                                                                       3.4.4-1                                    deb                         
@@ -695,7 +695,7 @@ libgs-common                                                                  10
 libgs10                                                                       10.0.0~dfsg-11+deb12u7                     deb                         
 libgs10-common                                                                10.0.0~dfsg-11+deb12u7                     deb                         
 libgsm1                                                                       1.0.22-1                                   deb                         
-libgssapi-krb5-2                                                              1.20.1-2+deb12u3                           deb                         
+libgssapi-krb5-2                                                              1.20.1-2+deb12u4                           deb                         
 libgstreamer-plugins-base1.0-0                                                1.22.0-3+deb12u5                           deb                         
 libgstreamer1.0-0                                                             1.22.0-2+deb12u1                           deb                         
 libgtk-3-0                                                                    3.24.38-2~deb12u3                          deb                         
@@ -723,15 +723,15 @@ libjansson4                                                                   2.
 libjbig0                                                                      2.1-6.1                                    deb                         
 libjbig2dec0                                                                  0.19-3                                     deb                         
 libjpeg62-turbo                                                               1:2.1.5-2                                  deb                         
-libjq1                                                                        1.6-2.1                                    deb                         
+libjq1                                                                        1.6-2.1+deb12u1                            deb                         
 libjson-c5                                                                    0.16-2                                     deb                         
 libjsoncpp25                                                                  1.9.5-4                                    deb                         
 libjxl0.7                                                                     0.7.0-10+deb12u1                           deb                         
-libk5crypto3                                                                  1.20.1-2+deb12u3                           deb                         
+libk5crypto3                                                                  1.20.1-2+deb12u4                           deb                         
 libkeyutils1                                                                  1.6.3-2                                    deb                         
 libkmod2                                                                      30+20221128-1                              deb                         
-libkrb5-3                                                                     1.20.1-2+deb12u3                           deb                         
-libkrb5support0                                                               1.20.1-2+deb12u3                           deb                         
+libkrb5-3                                                                     1.20.1-2+deb12u4                           deb                         
+libkrb5support0                                                               1.20.1-2+deb12u4                           deb                         
 libksba8                                                                      1.6.3-2                                    deb                         
 liblcms2-2                                                                    2.14-2                                     deb                         
 libldap-2.5-0                                                                 2.5.13+dfsg-5                              deb                         
@@ -843,8 +843,8 @@ libsoxr0                                                                      0.
 libspectre1                                                                   0.2.12-1                                   deb                         
 libspeex1                                                                     1.2.1-2                                    deb                         
 libspeexdsp1                                                                  1.2.1-1                                    deb                         
-libsqlite3-0                                                                  3.40.1-2+deb12u1                           deb                         
-libss2                                                                        1.47.0-2                                   deb                         
+libsqlite3-0                                                                  3.40.1-2+deb12u2                           deb                         
+libss2                                                                        1.47.0-2+b2                                deb                         
 libssh2-1                                                                     1.10.0-3+b1                                deb                         
 libssl3                                                                       3.0.17-1~deb12u2                           deb                         
 libstartup-notification0                                                      0.12-6+b1                                  deb                         
@@ -973,7 +973,7 @@ linux-libc-dev                                                                6.
 locales                                                                       2.36-9+deb12u13                            deb                         
 locales-all                                                                   2.36-9+deb12u13                            deb                         
 login                                                                         1:4.13+dfsg1-1+deb12u1                     deb                         
-logsave                                                                       1.47.0-2                                   deb                         
+logsave                                                                       1.47.0-2+b2                                deb                         
 lsb-release                                                                   12.0-1                                     deb                         
 make                                                                          4.3-4.1                                    deb                         
 man-db                                                                        2.11.2-2                                   deb                         
@@ -1095,7 +1095,7 @@ tags.cncf.io/container-device-interface/specs-go                              v0
 tags.cncf.io/container-device-interface/specs-go                              v1.0.0                                     go-module                   
 tar                                                                           1.34+dfsg-1.2+deb12u1                      deb                         
 typing-extensions                                                             4.15.0                                     python                      
-tzdata                                                                        2025b-0+deb12u1                            deb                         
+tzdata                                                                        2025b-0+deb12u2                            deb                         
 ucf                                                                           3.0043+nmu1+deb12u1                        deb                         
 udev                                                                          252.39-1~deb12u1                           deb                         
 usr-is-merged                                                                 37~deb12u1                                 deb                         
