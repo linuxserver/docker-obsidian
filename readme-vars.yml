@@ -109,6 +109,7 @@ init_diagram: |
   "obsidian:latest" <- Base Images
 # changelog
 changelogs:
+  - {date: "28.12.25:", desc: "Add Wayland init logic."}
   - {date: "21.09.25:", desc: "Rebase to Debian Trixie."}
   - {date: "12.07.25:", desc: "Rebase to Selkies add no sandbox to launcher, HTTPS IS NOW REQUIRED."}
   - {date: "03.04.25:", desc: "Update chromium launch options to improve performance."}

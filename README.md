@@ -591,6 +591,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **28.12.25:** - Add Wayland init logic.
 * **21.09.25:** - Rebase to Debian Trixie.
 * **12.07.25:** - Rebase to Selkies add no sandbox to launcher, HTTPS IS NOW REQUIRED.
 * **03.04.25:** - Update chromium launch options to improve performance.
