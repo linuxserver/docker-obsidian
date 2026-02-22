@@ -87,19 +87,22 @@ We are currently transitioning our desktop containers from X11 to Wayland. While
 **Important:** GPU acceleration support for X11 is being deprecated. Future development for hardware acceleration will focus entirely on the Wayland stack.
 
 To enable Wayland mode, set the following environment variable:
-*   `-e PIXELFLUX_WAYLAND=true`
+
+* `-e PIXELFLUX_WAYLAND=true`
 
 **Why use Wayland?**
-*   **Zero Copy Encoding:** When configured correctly with a GPU, the frame is rendered and encoded on the video card without ever being copied to the system RAM. This drastically lowers CPU usage and latency.
-*   **Modern Stack:** Single-application containers utilize **Labwc** (replacing Openbox) and full desktop containers use **KDE Plasma Wayland**, providing a more modern and secure compositing environment while retaining the same user experience.
+
+* **Zero Copy Encoding:** When configured correctly with a GPU, the frame is rendered and encoded on the video card without ever being copied to the system RAM. This drastically lowers CPU usage and latency.
+* **Modern Stack:** Single-application containers utilize **Labwc** (replacing Openbox) and full desktop containers use **KDE Plasma Wayland**, providing a more modern and secure compositing environment while retaining the same user experience.
 
 #### GPU Configuration
 
 To use hardware acceleration in Wayland mode, we distinguish between the card used for **Rendering** (3D apps/Desktops) and **Encoding** (Video Stream).
 
 **Configuration Variables:**
-*   `DRINODE`: The path to the GPU used for **Rendering** (EGL).
-*   `DRI_NODE`: The path to the GPU used for **Encoding** (VAAPI/NVENC).
+
+* `DRINODE`: The path to the GPU used for **Rendering** (EGL).
+* `DRI_NODE`: The path to the GPU used for **Encoding** (VAAPI/NVENC).
 
 If both variables point to the same device, the container will automatically enable **Zero Copy** encoding, significantly reducing CPU usage and latency.
 
@@ -122,10 +125,12 @@ For Intel and AMD GPUs.
 **Note: Nvidia support is not available for Alpine-based images.**
 
 **Prerequisites:**
-1.  **Driver:** Proprietary drivers **580 or higher** are required.
-2.  **Kernel Parameter:** Set `nvidia-drm.modeset=1` in your host bootloader (GRUB/systemd-boot).
-3.  **Initialization:** On headless systems, run `nvidia-modprobe --modeset` on the host (once per boot) to initialize the card.
-4.  **Docker Runtime:** Configure the host docker daemon to use the Nvidia runtime:
+
+1. **Driver:** Proprietary drivers **580 or higher** are required.
+2. **Kernel Parameter:** Set `nvidia-drm.modeset=1` in your host bootloader (GRUB/systemd-boot).
+3. **Initialization:** On headless systems, run `nvidia-modprobe --modeset` on the host (once per boot) to initialize the card.
+4. **Docker Runtime:** Configure the host docker daemon to use the Nvidia runtime:
+
     ```bash
     sudo nvidia-ctk runtime configure --runtime=docker
     sudo systemctl restart docker
@@ -134,6 +139,7 @@ For Intel and AMD GPUs.
 **Compose Configuration:**
 
 ```yaml
+---
 services:
   obsidian:
     image: lscr.io/linuxserver/obsidian:latest
@@ -157,10 +163,9 @@ This container is compatible with [SealSkin](https://sealskin.app).
 
 SealSkin is a self-hosted, client-server platform that provides secure authentication and collaboration features while using a browser extension to intercept user actions such as clicking a link or downloading a file and redirect them to a secure, isolated application environment running on a remote server.
 
-*   **SealSkin Server:** [Get it Here](https://github.com/linuxserver/docker-sealskin)
-*   **Browser Extension:** [Chrome](https://chromewebstore.google.com/detail/sealskin-isolation/lclgfmnljgacfdpmmmjmfpdelndbbfhk) and [Firefox](https://addons.mozilla.org/en-US/firefox/addon/sealskin-isolation/).
-*   **Mobile App:** [iOS](https://apps.apple.com/us/app/sealskin/id6758210210) and [Android](https://play.google.com/store/apps/details?id=io.linuxserver.sealskin)
-
+* **SealSkin Server:** [Get it Here](https://github.com/linuxserver/docker-sealskin)
+* **Browser Extension:** [Chrome](https://chromewebstore.google.com/detail/sealskin-isolation/lclgfmnljgacfdpmmmjmfpdelndbbfhk) and [Firefox](https://addons.mozilla.org/en-US/firefox/addon/sealskin-isolation/).
+* **Mobile App:** [iOS](https://apps.apple.com/us/app/sealskin/id6758210210) and [Android](https://play.google.com/store/apps/details?id=io.linuxserver.sealskin)
 
 ### Options in all Selkies-based GUI containers
 
@@ -196,12 +201,13 @@ This container is based on [Docker Baseimage Selkies](https://github.com/linuxse
 | WATERMARK_LOCATION | Where to paint the image over the stream integer options below |
 
 **`WATERMARK_LOCATION` Options:**
-- **1**: Top Left
-- **2**: Top Right
-- **3**: Bottom Left
-- **4**: Bottom Right
-- **5**: Centered
-- **6**: Animated
+
+* **1**: Top Left
+* **2**: Top Right
+* **3**: Bottom Left
+* **4**: Bottom Right
+* **5**: Centered
+* **6**: Animated
 
 </details>
 
@@ -227,7 +233,7 @@ When using 3d acceleration via Nvidia DRM or DRI3 in X11 mode, it is important t
 
 This will set the total virtual framebuffer to 4K. By default, the virtual monitor is 16K. If you have performance issues in an accelerated X11 session, try clamping the resolution to 1080p and work up from there:
 
-```
+```bash
 -e SELKIES_MANUAL_WIDTH=1920
 -e SELKIES_MANUAL_HEIGHT=1080
 -e MAX_RESOLUTION=1920x1080
@@ -239,16 +245,16 @@ This will set the total virtual framebuffer to 4K. By default, the virtual monit
 
 To launch the desktop session in a different language, set the `LC_ALL` environment variable. For example:
 
-*   `-e LC_ALL=zh_CN.UTF-8` - Chinese
-*   `-e LC_ALL=ja_JP.UTF-8` - Japanese
-*   `-e LC_ALL=ko_KR.UTF-8` - Korean
-*   `-e LC_ALL=ar_AE.UTF-8` - Arabic
-*   `-e LC_ALL=ru_RU.UTF-8` - Russian
-*   `-e LC_ALL=es_MX.UTF-8` - Spanish (Latin America)
-*   `-e LC_ALL=de_DE.UTF-8` - German
-*   `-e LC_ALL=fr_FR.UTF-8` - French
-*   `-e LC_ALL=nl_NL.UTF-8` - Netherlands
-*   `-e LC_ALL=it_IT.UTF-8` - Italian
+* `-e LC_ALL=zh_CN.UTF-8` - Chinese
+* `-e LC_ALL=ja_JP.UTF-8` - Japanese
+* `-e LC_ALL=ko_KR.UTF-8` - Korean
+* `-e LC_ALL=ar_AE.UTF-8` - Arabic
+* `-e LC_ALL=ru_RU.UTF-8` - Russian
+* `-e LC_ALL=es_MX.UTF-8` - Spanish (Latin America)
+* `-e LC_ALL=de_DE.UTF-8` - German
+* `-e LC_ALL=fr_FR.UTF-8` - French
+* `-e LC_ALL=nl_NL.UTF-8` - Netherlands
+* `-e LC_ALL=it_IT.UTF-8` - Italian
 
 ### Application Management
 
@@ -260,7 +266,7 @@ Natively installed packages (e.g., via `apt-get install`) will not persist if th
 
 To install an application, use the command line inside the container:
 
-```
+```bash
 proot-apps install filezilla
 ```
 
@@ -309,15 +315,18 @@ Using environment variables every facet of the application can be configured.
 
 **Booleans and Locking:**
 Boolean settings accept `true` or `false`. You can also prevent the user from changing a boolean setting in the UI by appending `|locked`.
-*   Example: `-e SELKIES_USE_CPU="true|locked"`
+
+* Example: `-e SELKIES_USE_CPU="true|locked"`
 
 **Enums and Lists:**
 These settings accept a comma-separated list of values. The first item becomes default. If only one item is provided, the UI dropdown is hidden.
-*   Example: `-e SELKIES_ENCODER="jpeg"`
+
+* Example: `-e SELKIES_ENCODER="jpeg"`
 
 **Ranges:**
 Use a hyphen-separated `min-max` format for a slider, or a single number to lock the value.
-*   Example: `-e SELKIES_FRAMERATE="60"`
+
+* Example: `-e SELKIES_FRAMERATE="60"`
 
 **Manual Resolution Mode:**
 If `SELKIES_MANUAL_WIDTH` or `SELKIES_MANUAL_HEIGHT` are set, the resolution is locked to those values.
