@@ -2,6 +2,12 @@
 
 BIN=/opt/obsidian/obsidian
 
+# Wayland check
+if pgrep labwc > /dev/null 2>&1; then
+  WAYLAND="--ozone-platform=wayland"
+fi
+
 ${BIN} \
   --no-sandbox \
+  ${WAYLAND} \
   "$@" > /dev/null 2>&1
