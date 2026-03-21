@@ -7,6 +7,11 @@ if ! pgrep chromium > /dev/null;then
   rm -f $HOME/.config/chromium/Singleton*
 fi
 
+# Wayland check
+if pgrep labwc > /dev/null 2>&1; then
+  WAYLAND="--ozone-platform=wayland"
+fi
+
 ${BIN} \
   --no-first-run \
   --no-sandbox \
@@ -14,4 +19,5 @@ ${BIN} \
   --simulate-outdated-no-au='Tue, 31 Dec 2099 23:59:59 GMT' \
   --test-type \
   --user-data-dir \
+  ${WAYLAND} \
    "$@" > /dev/null 2>&1
