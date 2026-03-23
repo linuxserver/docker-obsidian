@@ -1185,7 +1185,6 @@ websockets                                                                    16
 wheel                                                                         0.46.3                                 python                      
 wl-clipboard                                                                  2.2.1-2                                deb                         
 wlr-randr                                                                     0.4.1-1                                deb                         
-wtype                                                                         0.4-3                                  deb                         
 x11-apps                                                                      7.7+11+b1                              deb                         
 x11-common                                                                    1:7.7+24+deb13u1                       deb                         
 x11-session-utils                                                             7.7+6+b1                               deb                         
