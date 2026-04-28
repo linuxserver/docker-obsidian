@@ -109,6 +109,7 @@ init_diagram: |
   "obsidian:latest" <- Base Images
 # changelog
 changelogs:
+  - {date: "03.04.26:", desc: "Make Wayland default disable with PIXELFLUX_WAYLAND=false."}
   - {date: "20.03.26:", desc: "Use Wayland ozone platform fixes scaling and acceleration."}
   - {date: "28.12.25:", desc: "Add Wayland init logic."}
   - {date: "21.09.25:", desc: "Rebase to Debian Trixie."}

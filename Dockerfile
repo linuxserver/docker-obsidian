@@ -8,7 +8,10 @@ LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DA
 LABEL maintainer="quietsy"
 
 # title
-ENV TITLE=Obsidian
+ENV TITLE=Obsidian \
+    NO_GAMEPAD=true \
+    NO_DECOR=true \
+    PIXELFLUX_WAYLAND=true
 
 RUN \
   echo "**** add icon ****" && \
