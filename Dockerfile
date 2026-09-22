@@ -23,7 +23,8 @@ RUN \
   DEBIAN_FRONTEND=noninteractive \
   echo "**** install obsidian ****" && \
   if [ -z ${OBSIDIAN_VERSION+x} ]; then \
-    OBSIDIAN_VERSION=$(curl -sX GET "https://api.github.com/repos/obsidianmd/obsidian-releases/releases/latest"| jq -r '.tag_name'); \
+    OBSIDIAN_VERSION=$(curl -sL "https://api.github.com/repos/obsidianmd/obsidian-releases/releases?per_page=30" \
+    | jq -r '[.[] | select(.prerelease==false and .draft==false) | select(any(.assets[]; .name | test("^Obsidian-[0-9.]+\\.AppImage$")))][0].tag_name'); \
   fi && \
   apt-get install -y --no-install-recommends \
     chromium \
@@ -57,5 +58,5 @@ RUN \
 COPY /root /
 
 # ports and volumes
-EXPOSE 3000
+EXPOSE 3001
 VOLUME /config
