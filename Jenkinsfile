@@ -149,7 +149,7 @@ pipeline {
       steps{
         script{
           env.EXT_RELEASE = sh(
-            script: ''' curl -sL "https://api.github.com/repos/obsidianmd/obsidian-releases/releases?per_page=30" | jq -r '[.[] | select(.prerelease==false and .draft==false) | select(any(.assets[]; .name | test("^Obsidian-[0-9.]+\\.AppImage$")))][0].tag_name'
+            script: ''' curl -sL "https://api.github.com/repos/obsidianmd/obsidian-releases/releases?per_page=30" | jq -r '[.[] | select(.prerelease==false and .draft==false) | select(any(.assets[]; .name | test("^Obsidian-[0-9.]+\\\\.AppImage$")))][0].tag_name'
  ''',
             returnStdout: true).trim()
             env.RELEASE_LINK = 'custom_command'

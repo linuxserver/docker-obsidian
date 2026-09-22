@@ -4,7 +4,7 @@
 project_name: docker-obsidian
 external_type: na
 custom_version_command: |
-  curl -sL "https://api.github.com/repos/obsidianmd/obsidian-releases/releases?per_page=30" | jq -r '[.[] | select(.prerelease==false and .draft==false) | select(any(.assets[]; .name | test("^Obsidian-[0-9.]+\\.AppImage$")))][0].tag_name'
+  curl -sL "https://api.github.com/repos/obsidianmd/obsidian-releases/releases?per_page=30" | jq -r '[.[] | select(.prerelease==false and .draft==false) | select(any(.assets[]; .name | test("^Obsidian-[0-9.]+\\\\.AppImage$")))][0].tag_name'
 release_type: stable
 release_tag: latest
 ls_branch: main
