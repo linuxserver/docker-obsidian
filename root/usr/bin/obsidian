@@ -3,10 +3,8 @@
 BIN=/opt/obsidian/obsidian
 
 # Wayland check
-if ls -l /dev/dri/* > /dev/null 2>&1; then
-  if pgrep labwc > /dev/null 2>&1; then
-    WAYLAND="--ozone-platform=wayland"
-  fi
+if [ "${PIXELFLUX_WAYLAND,,}" == "true" ]; then
+  WAYLAND="--ozone-platform=wayland"
 fi
 
 ${BIN} \
